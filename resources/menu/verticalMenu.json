@@ -1,0 +1,151 @@
+{
+  "menu": [
+    {
+      "url": "/dashboard",
+      "name": "Dashboard",
+      "icon": "icon-home",
+      "slug": "pages-home"
+    },
+    {
+      "icon": "icon-client",
+      "url": "/to-do-list",
+      "name": "To Do List",
+      "slug": "pages-to-do"
+    },
+    {
+      "name": "Invoice",
+      "icon": "icon-invoice",
+      "slug": "pages-invoice",
+      "submenu": [
+        {
+          "url": "invoice/list-invoice",
+          "name": "List Invoice",
+          "slug": "pages-list-invoice"
+        },
+        {
+          "url": "invoice/tanda-terima",
+          "name": "List Tanda Terima",
+          "slug": "pages-list-tanda-terima"
+        }
+      ]
+    },
+    
+    {
+      "name": "Complain",
+      "icon": "icon-complain",
+      "slug": "pages-complain",
+      "submenu": [
+        {
+          "url": "complain/list-ticket",
+          "name": "List Ticket",
+          "slug": "pages-list-ticket"
+        },
+        {
+          "url": "complain/laporan-kerusakan",
+          "name": "List Laporan Kerusakan",
+          "slug": "pages-list-laporan-kerusakan"
+        },
+        {
+          "url": "complain/work-order",
+          "name": "List Work Order",
+          "slug": "pages-list-work-order"
+        }
+      ]
+    },
+    {
+      "name": "Request",
+      "icon": "icon-request",
+      "slug": "pages-request",
+      "submenu": [
+        {
+          "url": "request/material-request",
+          "name": "List Material Request",
+          "slug": "pages-list-material-request"
+        },
+        {
+          "url": "request/list-purchase-request",
+          "name": "List Purchase Request",
+          "slug": "pages-purchase-request"
+        },
+        {
+          "url": "/request/purchase-order",
+          "name": "List Purchase Order",
+          "slug": "pages-list-purchase-order"
+        }
+      ]
+    },
+    {
+      "name": "Vendor",
+      "icon": "icon-vendor",
+      "slug": "pages-vendor",
+      "submenu": [
+        {
+          "url": "vendor/list-tagihan-vendor",
+          "name": "List Tagihan Vendor",
+          "slug": "pages-list-tagihan-vendor"
+        }
+      ]
+    },
+    {
+      "name": "Client",
+      "icon": "icon-client",
+      "slug": "pages-client",
+      "submenu": [
+        {
+          "url": "client/list-tenant",
+          "name": "List Tenant",
+          "slug": "pages-list-tenant"
+        },
+        {
+          "url": "client/list-vendor",
+          "name": "List Vendor",
+          "slug": "pages-list-vendor"
+        }
+      ]
+    },
+    {
+      "name": "Report",
+      "icon": "icon-report",
+      "slug": "pages-report",
+      "submenu": [
+        {
+          "url": "report/report-invoice",
+          "name": "Report Invoice",
+          "slug": "pages-report-invoice"
+        },
+        {
+          "url": "report/report-tanda-terima",
+          "name": "Report Tanda Terima",
+          "slug": "pages-report-tenda-terima"
+        },
+        {
+          "url": "report/report-tagihan",
+          "name": "Report Tagihan",
+          "slug": "pages-report-tagihan"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "icon": "icon-setting",
+      "slug": "pages-setting",
+      "submenu": [
+        {
+          "url": "settings/list-bank",
+          "name": "List Bank",
+          "slug": "pages-list-bank"
+        },
+        {
+          "url": "settings/list-user",
+          "name": "List User",
+          "slug": "pages-list-user"
+        },
+        {
+          "url": "settings/list-department",
+          "name": "List Department",
+          "slug": "pages-list-department"
+        }
+      ]
+    }
+  ]
+}
