@@ -46,14 +46,37 @@ Route::get('/tes', function () {
 // Main Page Route
 Route::get('/page-2', [Page2::class, 'index'])->name('pages-page-2');
 
-Route::get('/bypass', function () {
-        $user = \App\Models\User::first(); // pakai user pertama
-        \Illuminate\Support\Facades\Auth::login($user);
+// Route::get('/bypass', function () {
+//         $user = \App\Models\User::first(); // pakai user pertama
+//         \Illuminate\Support\Facades\Auth::login($user);
         
-        session(['user_login' => $user]); // jika middleware cek session user
+//         session(['user_login' => $user]); // jika middleware cek session user
     
+//     return redirect('/dashboard');
+//     });
+
+
+Route::get('/bypass', function () {
+
+    // buat data palsu agar terdeteksi sebagai user
+    $fakeUser = [
+        "id" => 1,
+        "name" => "Developer Bypass",
+        "email" => "dev@example.com",
+        "level" => [
+            "id" => 10, // agar diarahkan ke /dashboard
+            "name" => "Admin"
+        ]
+    ];
+
+    session([
+        'ACCESS_TOKEN' => "dev-token-bypass",
+        'data' => $fakeUser,
+    ]);
+
     return redirect('/dashboard');
-    });
+});
+
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('logout', [LoginController::class, 'logout']);
