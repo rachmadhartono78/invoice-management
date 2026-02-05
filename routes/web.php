@@ -42,8 +42,18 @@ use App\Http\Controllers\TodoListController;
 Route::get('/tes', function () {
     return view('desain_pdf.tes');
 });
+
 // Main Page Route
 Route::get('/page-2', [Page2::class, 'index'])->name('pages-page-2');
+
+Route::get('/bypass', function () {
+        $user = \App\Models\User::first(); // pakai user pertama
+        \Illuminate\Support\Facades\Auth::login($user);
+        
+        session(['user_login' => $user]); // jika middleware cek session user
+    
+    return redirect('/dashboard');
+    });
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('logout', [LoginController::class, 'logout']);
@@ -238,13 +248,5 @@ Route::group(['middleware' => 'cekauth'], function () {
     // pages
     Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
 
-    Route::get('/bypass', function () {
-        $user = \App\Models\User::first(); // pakai user pertama
-        \Illuminate\Support\Facades\Auth::login($user);
-        
-        session(['user_login' => $user]); // jika middleware cek session user
-    
-    return redirect('/dashboard');
-    });
 
 });
